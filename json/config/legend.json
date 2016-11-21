@@ -1,0 +1,399 @@
+{	"colors" : {
+ 	    "grey" : "#252525",
+ 	    "blue" : "#1B9E77",
+ 	    "brown" : "#A6761D",
+ 	    "terracotta" : "#D95F02",
+ 	    "violett" : "#7570B3",
+ 	    "pink" : "#E7298A",
+ 	    "green" : "#66A61E",
+ 	    "orange" : "#E6AB02",
+ 	    
+ 	    "black" : "#000000",
+ 	    "red" : "#E52826",
+ 	    "orange2"  : "#EA6624",
+ 	    "green2" : "#379043",
+ 	    "darkblue" : "#204d91",
+ 	    "lightblue" : "#3782BB",
+ 	    "yellow2" : "#FBBB3C",
+ 	    "bordeaux" : "#A02E37",
+ 	    "blue_work" : "#90C0E5",
+ 	    "blue_education" : "#3F81BF"
+	},
+	"groups" : [
+	    {
+		"id" : "group_activities",
+	    "de" : "Genutzte Standorte",
+		"en" : "Used Locations",
+		"layers" : [{
+			"id" : "layer_possibilities",
+			"de" : "",
+			"en" : "",
+			"classitem" : "possibility",
+			"classes" : [
+				{   "de" : "Wohnort",
+					"en" : "Home",
+					"expression" : "HOME",
+					"mainColor" : "black"
+				},
+				{	"de" : "Arbeits-StO",
+					"en" : "Job",
+					"expression" : "JOB",
+					"mainColor" : "blue_work"
+				},
+				{	"de" : "Bildungs-StO",
+					"en" : "Location for Education",
+					"expression" : "EDUCATION",
+					"mainColor" : "blue_education"
+				},
+				{	"de" : "Freizeit-StO",
+					"en" : "Location for Leisure",
+					"expression" : "LEISURE",
+					"mainColor" : "yellow2"
+				},
+				{	"de" : "Einkaufs-StO",
+					"en" : "Shopping",
+					"expression" : "SHOPPING",
+					"mainColor" : "bordeaux"
+				},
+				{	"de" : "StO. priv. Erledigung",
+					"en" : "Location priv. Settlement",
+					"expression" : "SETTLEMENT",
+					"mainColor" : "red"
+				},
+				{	"de" : "Anderer Standort",
+					"en" : "Other",
+					"expression" : "OTHER",
+					"mainColor" : "brown"
+				}]
+			},
+			{
+				"id" : "layer_activities",
+				"de" : "",
+				"en" : "",
+				"classitem" : "activity",
+				"classes" : [
+					{   "de" : "Tagesbeginn",
+						"en" : "Day started",
+						"expression" : "-10",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Hauswirtschaft",
+						"en" : "Housework (at home)",
+						"expression" : "10",
+						"mainColor" : "grey"
+					},
+					{   "de" : "E-Commerce",
+						"en" : "E commerce",
+						"expression" : "12",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Hauswirtschaftliche Tätigkeiten,<br>in der Nähe des Hauses",
+						"en" : "Housework (out of home)",
+						"expression" : "32",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Einkäufe",
+						"en" : "Shopping",
+						"expression" : "50",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Arbeitssuche",
+						"en" : "Job-seeking",
+						"expression" : "62",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Bewegung",
+						"en" : "Moving",
+						"expression" : "80",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Arbeiten",
+						"en" : "Working",
+						"expression" : "211",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Auf die Arbeit bezogene Gespräche",
+						"en" : "Conversation about work",
+						"expression" : "231",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Aktive Freizeit zu Hause,<br>Reparaturen",
+						"en" : "Active freetime (at home)",
+						"expression" : "299",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Ehrenamt",
+						"en" : "Voluntary work",
+						"expression" : "300",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Schule",
+						"en" : "School",
+						"expression" : "410",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Studium",
+						"en" : "University",
+						"expression" : "411",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Mittagspause in Schule",
+						"en" : "Pupil lunch break",
+						"expression" : "499",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Schlafen",
+						"en" : "Sleeping",
+						"expression" : "511",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Ausruhen / Nichtstun",
+						"en" : "Relaxing",
+						"expression" : "512",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Persönliche Angelegenheiten,<br>Dienstleistungen",
+						"en" : "Personal matters",
+						"expression" : "522",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Essen zu Hause",
+						"en" : "Eating at home",
+						"expression" : "531",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Mittagessen (in Kantine)",
+						"en" : "Lunch (at cantine)",
+						"expression" : "533",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Gespräche persönlichen Inhalts",
+						"en" : "Conversation about personal matters",
+						"expression" : "611",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Besuche",
+						"en" : "Visiting someone",
+						"expression" : "631",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Ausflug",
+						"en" : "Excursion",
+						"expression" : "640",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Freizeit zu Hause",
+						"en" : "Freetime at home",
+						"expression" : "700",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Fernsehen",
+						"en" : "Televiewing",
+						"expression" : "711",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Ausgehen, Essen gehen",
+						"en" : "Dining or going out",
+						"expression" : "720",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Sport",
+						"en" : "Sports",
+						"expression" : "721",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Spazierengehen",
+						"en" : "Promenading",
+						"expression" : "722",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Spielen",
+						"en" : "Playing",
+						"expression" : "723",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Besuch von Veranstaltungen<br>(Kino, Theater, Kirche)",
+						"en" : "Beeing at an event",
+						"expression" : "724",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Sonstige Freizeitaktivitäten",
+						"en" : "Any freetime",
+						"expression" : "740",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Sonstige Aktivitäten",
+						"en" : "Any activity",
+						"expression" : "799",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Lernen mit Kindern,<br>Spielen oder Sport mit Kindern",
+						"en" : "Learning with children",
+						"expression" : "800",
+						"mainColor" : "grey"
+					},
+					{   "de" : "Kinder befördern",
+						"en" : "Transporting children",
+						"expression" : "880",
+						"mainColor" : "grey"
+					}
+				]
+		 }, {
+				"id" : "layer_sex",
+				"de" : "",
+				"en" : "",
+				"classitem" : "sex",
+				"classes" : [
+					{   "de" : "♂",
+						"en" : "♂",
+						"expression" : "1",
+						"mainColor" : "grey"
+					},
+					{   "de" : "♀",
+						"en" : "♀",
+						"expression" : "2",
+						"mainColor" : "grey"
+					}]
+		 	}]
+	    },
+		 {
+			"id" : "group_movements",
+		    "de" : "Genutzte Verkehrsmittel",
+			"en" : "Movements",
+			"layers" : [{
+				"id" : "layer_modes",
+				"de" : "",
+				"en" : "",
+				"classitem" : "mode",
+				"classes" : [
+		             {	"de" : "ÖPNV",
+		            	 "en" : "PT",
+		            	 "expression" : "5",
+		            	 "mainColor" : "green2"
+		             },
+					{	"de" : "MIV (Fahrer)",
+						"en" : "MIT (driver)",
+						"expression" : "2",
+						"mainColor" : "red"
+					},
+					{	"de" : "MIV (Mitfahrer)",
+						"en" : "MIT (passanger)",
+						"expression" : "3",
+						"mainColor" : "orange2"
+					},
+					{   "de" : "Fahrrad",
+						"en" : "Bike",
+						"expression" : "1",
+						"mainColor" : "darkblue"
+					},
+					{   "de" : "zu Fuß",
+						"en" : "Walk",
+						"expression" : "0",
+						"mainColor" : "lightblue"
+					},
+					{	"de" : "Taxi",
+						"en" : "Taxi",
+						"expression" : "4",
+						"mainColor" : "grey"
+					},
+					{	"de" : "Zug",
+						"en" : "Train",
+						"expression" : "6",
+						"mainColor" : "grey"
+					}]
+			}]
+	},{ 
+		"id" : "group_possibilities",
+		"de" : "Gelegenheitsdichte",
+		"en" : "Possibilities density",
+		"layers" : [
+		   { "id" : "layer_ALL_psk",
+			 "de" : "Alle Gelegenheiten",
+			 "en" : "All possibilities",
+			 "splititem" : "ALL_psk",
+			 "mainColor" : "grey",
+			 "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			 "unit" : { "de" : "Gelegenheiten / km²",
+                 		 "en" : "Possibilities / km²" }
+		   },
+		   { "id" : "layer_HOME_psk",
+			 "de" : "Nutzungsdichte Wohnorte",
+			 "en" : "Homes",
+			 "splititem" : "HOME_psk",
+			 "mainColor" : "terracotta",
+			 "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			 "unit" : { "de" : "Genutzte Wohnorte / km²",
+                 	    "en" : "Homes / km²" }
+			},
+			{ "id" : "layer_JOB_psk",
+			  "de" : "Nutzungsdichte Arbeits-StO",
+			  "en" : "Jobs",
+			  "splititem" : "JOB_psk",
+			  "mainColor" : "blue_work",
+			  "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			  "unit" : { "de" : "Genutzte Arbeits-StO / km²",
+		                 "en" : "Jobs / km²" }
+			},
+			{ "id" : "layer_EDUCATION_psk",
+			  "de" : "Nutzungsdichte Bildungs-StO",
+			  "en" : "Education",
+			  "splititem" : "EDUCATION_psk",
+			  "mainColor" : "blue_education",
+			  "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			  "unit" : { "de" : "Genutzte Bildungs-StO / km²",
+	                 	 "en" : "Educations / km²" }
+			},
+			{ "id" : "layer_LEISURE_psk",
+			  "de" : "Nutzungsdichte Freizeit-StO",
+			  "en" : "Leisures",
+			  "splititem" : "LEISURE_psk",
+			  "mainColor" : "yellow2",
+			  "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			  "unit" : { "de" : "Genutzte Freizeit-StO / km²",
+	                 	 "en" : "Leisures / km²" }
+			},
+			{ "id" : "layer_SHOPPING_psk",
+			  "de" : "Nutzungsdichte Einkaufs-StO",
+			  "en" : "Shops",
+			  "splititem" : "SHOPPING_psk",
+			  "mainColor" : "bordeaux",
+			  "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			  "unit" : { "de" : "Genutzte Einkaufs-StO / km²",
+	                 	 "en" : "Shops / km²" }
+			},
+			{ "id" : "layer_SETTLEMENT_psk",
+			  "de" : "Nutzungsdichte priv. Erled.",
+			  "en" : "priv. Settlements",
+			  "splititem" : "SETTLEMENT_psk",
+			  "mainColor" : "red",
+			  "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			  "unit" : { "de" : "Genutzte StO priv. Erled. / km²",
+	                 	 "en" : "priv. Settlements / km²" }
+			},
+			{ "id" : "layer_OTHER_psk",
+			  "de" : "Nutzungsdichte Andere Standorte",
+			  "en" : "Others",
+			  "splititem" : "OTHER_psk",
+			  "mainColor" : "brown",
+			  "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			  "unit" : { "de" : "Andere / km²",
+	                 	 "en" : "Others / km²" }
+			}
+		]
+	},{
+		"id" : "group_population",
+		"de" : "Bevölkerungsdichte",
+		"en" : "Population density",
+		"layers" : [
+		   { "id" : "layer_POPULATION_psk",
+			 "de" : "",
+			 "en" : "",
+			 "splititem" : "POPULATION_psk",
+			 "mainColor" : "grey",
+			 "alphas" : [0.833, 0.666, 0.5, 0.333, 0.166],
+			 "unit" : { "de" : "Personen / km²",
+	                    "en" : "Persons / km²" }
+		   }
+		]
+	}]
+}

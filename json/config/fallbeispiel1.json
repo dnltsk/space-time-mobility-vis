@@ -1,0 +1,5 @@
+{
+	"defaultActivityLayerId" : "layer_possibilities",
+	"defaultMovementLayerId" : "layer_mode";
+	"defaultBackgroundLayerId" : "layer_population";
+}
