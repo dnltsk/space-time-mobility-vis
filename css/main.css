@@ -1,0 +1,61 @@
+body {
+	overflow:hidden;
+}
+svg#map {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+	width:100%;
+	height:100%;
+}
+
+#title_container{
+	z-index:2;
+	position: absolute;
+	right:0;
+	top:0;	
+	width:auto;
+	height:auto;
+	padding:15px 20px 10px 10px;
+	background-color:rgba(255, 255, 255, .5);
+	border: solid 1px #ffffff;
+}
+#title_container .navigation a{
+	color:blue;
+}
+#title_container .navigation a.current{
+	font-weight: bold;
+}
+#title_container #text{
+	width: 362px;
+	height: auto;
+	position: relative;
+	left: 0px;
+	top: 0;
+	margin: 15px 0 0 0;
+}
+#title_container .title{
+	font-size: 24pt;
+	text-align: left;
+}
+#title_container .help{
+	margin:10px 0 0;
+	width:auto;
+	position:relative;
+	right:0;
+}
+#title_container .help .navigation{
+	text-align: center;
+}
+
+.help_content{
+	display:none;
+	margin:5px 0 0;
+}
+.help_content{
+	display:none;
+}
+.toggle_help.current{
+	font-weight: bold;
+}

@@ -1,0 +1,130 @@
+body {
+	color: rgb(34, 34, 34);
+	font-family: arial,sans-serif;
+	font-size: small;
+}
+
+div#controls{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+	width:auto;
+	height:auto;
+	pointer-events: none;
+}
+div#controls a{
+	pointer-events: auto;
+}
+div#controls .control{
+	float:left;
+	padding:20px;
+	vertical-align: bottom;
+	background-color:rgba(255,255,255,.5);
+}
+div#controls .control.transparent{
+	background-color:transparent;
+}
+div#controls img{
+	cursor:pointer;
+	pointer-events:auto;
+}
+
+div#background{
+	position:absolute;
+	right:0;
+	bottom:0;
+	z-index:2;
+	width:auto;
+	height:auto;
+	padding:20px;
+	background-color:rgba(255,255,255,.5); 
+	border-left:solid 2px rgba(255,255,255,1);
+	border-top:solid 2px rgba(255,255,255,1);
+}
+
+div#legend{
+	position:absolute;
+	right:0;
+	bottom:0px;
+	z-index:2;
+	width:auto;
+	height:auto;
+	padding:20px 20px 5px 20px ;
+	background-color:rgba(255,255,255,.5); 
+	border-left:solid 2px rgba(255,255,255,1);
+	border-top:solid 2px rgba(255,255,255,1);
+	pointer-events: none;
+}
+div#legend a{
+	pointer-events: auto;
+}
+div#legend .layer{
+	margin-bottom: 10px;
+}
+div#legend .title{
+	float:none;
+}
+div#legend .title .name{
+	font-weight:bold;
+	float:left;
+}
+div#legend .title .edit{
+	margin-left:5px;
+	font-weight:normal;
+	float:right;
+}
+div#legend .classitem{
+	clear:left;
+	height:15px;
+	padding:2px 0;
+}
+
+div#legend .classitem svg.icon{
+	height:15px;
+	width:15px;
+	float:left;
+	margin-right:3px;
+}
+
+.tooltip {
+	position: absolute;
+	z-index:10000;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+}
+	
+.tooltip.hidden {
+	display: none;
+}
+
+.tooltip .title{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.tooltip p {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.tooltip .trafficTooltip th{
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+}
+.tooltip .trafficTooltip td{
+	vertical-align: top;
+}

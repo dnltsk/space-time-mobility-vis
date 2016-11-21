@@ -1,0 +1,51 @@
+table#geometry,
+		table#signature{
+			border-collapse:separate;
+			float:left;
+			margin:0 0 0 10px;
+		}
+		table#geometry{
+			margin:0 0 0 30px;
+		}
+		table#geometry td,
+		table#signature td{
+			vertical-align: middle;
+			text-align: center;
+		}
+		table#geometry thead td,
+		table#signature thead td{
+			font-size:14pt;
+			font-weight: bold;
+		}
+		table#geometry tbody td,
+		table#signature tbody td{
+			border:2px solid white;
+			padding: 5px;
+			text-align: center;
+		}
+		table#geometry tbody td:hover,
+		table#geometry tbody td.selected,
+		table#signature tbody td:hover,
+		table#signature tbody td.selected{
+			border:2px solid yellow;
+			cursor: pointer;
+		}
+		table#geometry tbody td.emptyCell:hover,
+		table#signature tbody td.emptyCell:hover{
+			border:2px solid white;
+			cursor: default;
+		}
+		
+		table#geometry div,
+		table#signature div{
+			width:87px;
+			height:87px;
+			text-align: center;
+			overflow:hidden;
+		}
+		table#geometry svg,
+		table#signature svg{
+			width:100%;
+			height:100%;
+			overflow:hidden;
+		}

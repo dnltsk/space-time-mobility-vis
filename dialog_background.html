@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<title>Hintergrund anpassen</title>
+	<script type="text/javascript" src="js/console_fallback.js"></script>
+	<script type="text/javascript" src="js/d3/d3.min.js"></script>
+	<script type="text/javascript" src="js/dialog_background.js"></script>
+	<link rel="stylesheet" media="screen" href="css/controls.css" />
+	<link rel="stylesheet" media="screen" href="css/main.css" />
+	<link rel="stylesheet" media="screen" href="css/dialog_content.css" />
+	<link rel="stylesheet" media="screen" href="css/dialog_background.css" />
+	
+	<script type="text/javascript">
+	
+		var backgroundLayersNames = ["bezirke",
+		                             "ortsteile",
+		                             "TVZ_879",
+					                 "hexagons_small",
+					                 "hexagons_medium",
+					                 "hexagons_large",
+					                 "squares_small",
+					                 "squares_medium",
+					                 "squares_large",
+					                 "triangles_small",
+					                 "triangles_medium",
+					                 "triangles_large"];
+		
+		
+	</script>
+</head>
+<body onload="init()">
+	
+	<div id="dialogHead">
+		<div style="float:right;cursor:pointer;">
+			<span onclick="parent.document.getElementById('background_dialog').style.display='none';parent.document.getElementById('fade').style.display='none';">Schließen</span>
+		</div>
+		<b>Hintergrund anpassen</b>
+	</div>
+	
+	<div id="mainWrapper">
+	
+		<table id="signature">
+			<thead>
+				<tr>
+					<td colspan="3">
+						Thema
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td title="Dichte der Bevölkerung"
+						onclick="selectSignature('POPULATION_psk', this)">
+						<span>Bevölkerungsd.</span><br>
+						<div>
+							<svg class="POPULATION_psk"></svg>
+						</div>
+					</td>
+					<td onclick="selectSignature('ALL_psk', this)">
+						<span>Außer Haus</span><br>
+						<div>
+							<svg class="ALL_psk"
+								 title="Dichte aller Gelegenheiten"></svg>
+						</div>
+					</td>
+					<td class="emptyCell"> </td>
+					<!--td onclick="selectSignature('HOME_psk', this)">
+						<span>Wohnorte</span><br>
+						<div>
+							<svg class="HOME_psk" 
+								 title="Dichte aller Wohnorte"></svg>
+						</div>
+					</td-->
+				</tr>
+				<tr>
+					<td onclick="selectSignature('JOB_psk', this)">
+						<span>Arbeits-StO</span><br>
+						<div>
+							<svg class="JOB_psk"
+								 title="Dichte aller Arbeitsplätze"></svg>
+						</div>
+					</td>
+					<td onclick="selectSignature('EDUCATION_psk', this)">
+						<span>Bildungs-StO</span><br>
+						<div>
+							<svg class="EDUCATION_psk"
+								 title="Dichte aller Bildungeinrichtungen"></svg>
+						</div>
+					</td>
+					<td onclick="selectSignature('LEISURE_psk', this)">
+						<span>Freizeit-StO</span><br>
+						<div>
+							<svg class="LEISURE_psk"
+								 title="Dichte aller Freizeitgelegenheiten"></svg>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td onclick="selectSignature('SHOPPING_psk', this)">
+						<span>Einkaufs-StO</span><br>
+						<div>
+							<svg class="SHOPPING_psk"
+								 title="Dichte aller Einkaufsgelegenheiten"></svg>
+						</div>
+					</td>
+					<td onclick="selectSignature('SETTLEMENT_psk', this)">
+						<span>StO priv. Erled.</span><br>
+						<div>
+							<svg class="SETTLEMENT_psk"
+								 title="Dichte aller privaten Erledigungen"></svg>
+						</div>
+					</td>
+					<td onclick="selectSignature('OTHER_psk', this)">
+						<span>Andere StO</span><br>
+						<div>
+							<svg class="OTHER_psk"
+								 title="Dichte anderer Gelegenheiten"></svg>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<table id="geometry">
+			<thead>
+				<tr>
+					<td colspan="4">
+						Gebietsunterteilung
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td onclick="selectGeometry('bezirke', this)">
+						<span>Bezirke</span><br>
+						<div>
+							<svg class="bezirke" 
+							 	 title="Bezirke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('hexagons_large', this)">
+						<span>Sechsecke L</span><br>
+						<div>
+							<svg class="hexagons_large"
+								 title="große Sechsecke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('squares_large', this)">
+						<span>Quadrate L</span><br>
+						<div>
+							<svg class="squares_large"
+								 title="große Rechtecke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('triangles_large', this)">
+						<span>Dreiecke L</span><br>
+						<div>
+							<svg class="triangles_large"
+								 title="große Dreiecke">
+							</svg>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td onclick="selectGeometry('ortsteile', this)">
+						<span>Ortsteile</span><br>
+						<div>
+							<svg class="ortsteile"
+								 title="Ortsteile">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('hexagons_medium', this)">
+						<span>Sechsecke M</span><br>
+						<div>
+							<svg class="hexagons_medium"
+								 title="mittelgroße Sechsecke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('squares_medium', this)">
+						<span>Quadrate M</span><br>
+						<div>
+							<svg class="squares_medium"
+								 title="mittelgroße Rechtecke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('triangles_medium', this)">
+						<span>Dreiecke M</span><br>
+						<div>
+							<svg class="triangles_medium"
+								 title="mittelgroße Dreiecke">
+							</svg>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td onclick="selectGeometry('TVZ_879', this)">
+						<span>TeilVZs 879</span><br>
+						<div>
+							<svg class="TVZ_879"
+								 title="TeilVZs 879">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('hexagons_small', this)">
+						<span>Sechsecke S</span><br>
+						<div>
+							<svg class="hexagons_small"
+								 title="kleine Sechsecke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('squares_small', this)">
+						<span>Quadrate S</span><br>
+						<div>
+							<svg class="squares_small"
+								 title="kleine Rechtecke">
+							</svg>
+						</div>
+					</td>
+					<td onclick="selectGeometry('triangles_small', this)">
+						<span>Dreiecke S</span><br>
+						<div>
+							<svg class="triangles_small"
+								 title="kleine Dreiecke">
+							</svg>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</body>
+</html>

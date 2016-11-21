@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<script type="text/javascript" src="js/d3/d3.min.js"></script>
+	<title>Geovisualisierung</title>
+	<style>
+		body {
+			color: rgb(34, 34, 34);
+			font-family: arial,sans-serif;
+			font-size: small;
+		}
+		#mainWrapper{
+			width:500px;
+			margin:10px auto;
+		}
+		
+		a img{
+			border:none;
+			width:400px;
+			margin-right:20px;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div id="mainWrapper">
+
+		<h3>
+			Praxisteil Masterarbeit<br>
+			Daniel Teske<br>
+			(Finaler Arbeitsstand vom 11. Juli 2014)		
+		</h3>
+
+		<h1>Ansprüche an Geovisualisierungen von Simulationsergebnissen aus Verkehrsmodellen und prototypische Implementierung</h1>
+		
+		<div class="fallbeispiel_container">
+			<p>
+				Die vorliegende Masterarbeit befasst sich mit der Konzeptionierung, Umsetzung und Implementie-rung von Geovisualisierungen für das Tavel Activity Patterns Simulation-Verkehrsmodell (TAPAS), das am Institut für Verkehrsforschung am Deutschen Zentrum für Luft- und Raumfahrt (DLR-IVF) entwickelt und eingesetzt wird. 
+			</p>
+			<p>
+				Da im Vorfeld keine nennenswerten Ansätze für die Arbeit mit Geovisualisierungen existierten, war eine Analyse über geeigneter Kartentypen und möglicher Nutzergruppen notwendig. Diese brachte zum Vorschein, dass die unterschiedlichen Betrachtungsweisen der Verkehrsforscher auch verschiedene Kartentypen erfordern. Die Fragestellungen und Kartentypen können durch ver-schiedene Aggregationsstufen der simulierten Verkehrsteilnehmer in drei Gruppen zusammenge-fasst werden: Fragestellungen und Karten über einzelne Individuen, aggregierte Individuen und alle Individuen. Eine weitere Analyse über Erstellungsmöglichkeiten durch vorhandene Software ergab, dass für die Erstellung individueller Geovisualisierungen kein geeignetes System in Frage kommt. Empfehlenswert ist daher die Eigenentwicklung auf Basis von Web-Visualisierungstechniken. 
+			</p>
+			<p>
+				Die umgesetzten Raum-Zeit-Pfade ermöglichen eine detaillierte Betrachtung der raumzeitlichen Veränderungen einzelner Individuen. Dadurch ist es den Verkehrsforschern möglich die Plausibili-tät einzelner von generierten Aktivitätenketten zu prüfen. Räumlich aggregierte Individuen wer-den durch Verkehrsströme dargestellt, in welchen ein besonderer Fokus auf die durchgeführten Aktivitäten liegt. Durch eine differenzierte Betrachtung des Quell- und Zielverkehrs ist es möglich Ausschnitte aus Aktivitätenketten räumlich zu verorten. Abschließend wurde für die Betrachtung aller Individuen eine Kartenanimation als Dashboard erstellt, welche die genutzten Standorttypen aller Personen zu jedem Zeitpunkt darstellt. Durch die Kartenanimation können Aktivitätenmuster visuell analysiert werden und homogene von heterogenen Raumnutzungsstrukturen differenziert werden.
+			</p>
+			<p>
+				Die Implementierungen orientieren sich an der Visualisierungspipeline. Dabei wurden spezielle Anspruche an die Datenprozessierung und Datenhaltung  identifiziert. Außerdem wurde großer Wert auf eine flüssige Darstellung gelegt. 
+			</p>
+			<p>
+				Durch die Umsetzungen ist es den Verkehrsforschern am DLR-IVF nun möglich drei verschiedene interaktive Kartentypen automatisiert zu erzeugen. Diese sind für die Plausibilisierung, Verifizie-rung, visuellen Analyse und der Erkenntnisvermittlung an außenstehende  Fachleute und Nicht-Fachleute geeignet.
+			</p>
+			<p>&nbsp;</p>
+		</div>
+		
+		<div class="fallbeispiel_container">
+			<h3>Einzelne Individuen - Raum-Zeit-Pfade</h3>
+			<a href="fallbeispiel1.html" target="_blank">öffnen</a>
+			<p class="img_container">
+				<a href="fallbeispiel1.html" target="_blank">
+					<img src="img/screenshot_fallbeispiel1.png">
+				</a>
+			</p>
+		</div>
+		<br clear="all">
+		
+		<div class="fallbeispiel_container">	
+			<h3>Aggregierte Individuen - Verkehrsströme</h3>
+			<a href="fallbeispiel2.html" target="_blank">öffnen</a>
+			<p class="img_container">
+				<a href="fallbeispiel2.html" target="_blank">
+					<img src="img/screenshot_fallbeispiel2.png">
+				</a>
+			</p>
+		</div>
+		<br clear="all">
+		
+		<div class="fallbeispiel_container">
+			<h3>Alle Individuen - Kartenanimation als Dashboard</h3>
+			<a href="fallbeispiel3.html" target="_blank">öffnen</a>
+			<p class="img_container">
+				<a href="fallbeispiel3.html" target="_blank">
+					<img src="img/screenshot_fallbeispiel3.png">
+				</a>
+			</p>
+		</div>
+	
+	</div>
+	
+		
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<title>Verkehrsströme anpassen</title>
+	<script type="text/javascript" src="js/console_fallback.js"></script>
+	<script type="text/javascript" src="js/d3/d3.min.js"></script>
+	<script type="text/javascript" src="js/dialog_background.js"></script>
+	<link rel="stylesheet" media="screen" href="css/controls.css" />
+	<link rel="stylesheet" media="screen" href="css/main.css" />
+	<link rel="stylesheet" media="screen" href="css/dialog_content.css" />
+	<style>
+
+		.traffic_dirs p{
+			padding:4px;
+			border:2px solid white;
+			margin:1px;
+			cursor: pointer;
+		}
+		
+		.traffic_dirs p.selected,
+		.traffic_dirs p:HOVER{
+			border:2px solid yellow;
+		}
+		
+		.standorttyp_container{
+			height:22px;
+			padding:1px;
+			margin:1px;
+			border:2px solid white;
+			width:80%;
+			cursor: pointer;
+		}
+		
+		.standorttyp_container:HOVER{
+			border:2px solid yellow;
+		}
+		
+		.standorttyp_container.selected{
+			border:2px solid yellow;
+		}
+		.standorttyp_container svg{
+			float: left;
+		}
+		.standorttyp_container span{
+		    float: left;
+		    margin: 3px 0 0 5px;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	/*
+	 *
+	 */
+	function updateSrcLocationType(newSrcLocationType, node){
+		d3.selectAll(".vorgaenger_standorttyp div").classed("selected", false);
+		node.className = "standorttyp_container selected";
+		parent.updateSrcLocationType(newSrcLocationType);
+	}
+	
+	/*
+	 *
+	 */
+	function updateDestLocationType(newDestLocationType, node){
+		d3.selectAll(".folge_standorttyp div").classed("selected", false);
+		node.className = "standorttyp_container selected";
+		parent.updateDestLocationType(newDestLocationType);
+	}
+	
+	/*
+	 *
+	 */
+	function updateTrafficDir(newTrafficDirection, node){
+		d3.selectAll(".traffic_dirs p").classed("selected", false);
+		node.className = "selected";
+		parent.updateTrafficDir(newTrafficDirection);
+	}
+	
+	var arc = d3.svg.arc()
+		    .outerRadius(15)
+		    .innerRadius(0);
+	
+	var arcPart = 360.0 / 7.0;
+	
+	</script>
+</head>
+<body onload="init()">
+	
+	<div id="dialogHead">
+		<div style="float:right;cursor:pointer;">
+			<span onclick="parent.document.getElementById('traffic_dialog').style.display='none';parent.document.getElementById('fade').style.display='none';">Schließen</span>
+		</div>
+		<b>Verkehrsströme anpassen</b>
+	</div>
+	
+	<div id="mainWrapper">
+	
+		<table>
+			<tr>
+				<td colspan="2" class="traffic_dirs">
+					<b>Verkehrsrichtung</b>
+					<p onclick="updateTrafficDir('outgoing', this)" class="selected">
+						Quellverkehr <i>"Wohin fließt der Verkehr, der in einer Zelle beginnt?"</i>
+					</p>
+					<p onclick="updateTrafficDir('incoming', this)">
+						Zielverkehr <i>"Woher kommt der Verkehr, der in einer Zelle endet?"</i>
+					</p>
+					<div>&nbsp;</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="50%" class="vorgaenger_standorttyp">
+					<b>Vorgänger-Standorttyp</b><br>
+					<div class="standorttyp_container selected" onclick="updateSrcLocationType('ALL', this)">
+						<svg width="20" height="20">
+							<g>
+								<path d="M10 10 L10 1 17 4" style="fill:#000000;" />
+							</g>
+							<g transform="rotate(51, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#90C0E5;" />
+							</g>
+							<g transform="rotate(103, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#3F81BF;" />
+							</g>
+							<g transform="rotate(154, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#A02E37;" />
+							</g>
+							<g transform="rotate(206, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#E52826;" />
+							</g>
+							<g transform="rotate(257, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#FBBB3C;" />
+							</g>
+							<g transform="rotate(309, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#A6761D;" />
+							</g>
+							<circle cx="10" cy="10" r="9" style="fill:none;stroke:black;">
+						</svg>
+						<span>Alle</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('HOME', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#000000;;stroke:black;">
+						</svg>
+						<span>Wohnorte</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('JOB', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#90C0E5;stroke:black;">
+						</svg>
+						<span>Arbeits-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('EDUCATION', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#3F81BF;stroke:black;">
+						</svg>
+						<span>Bildungs-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('SHOPPING', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#A02E37;stroke:black;">
+						</svg>
+						<span>Einkaufs-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('SETTLEMENT', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#E52826;stroke:black;">
+						</svg>
+						<span>StO priv. Erledigung</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('LEISURE', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#FBBB3C;stroke:black;">
+						</svg>
+						<span>Freizeit-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateSrcLocationType('OTHER', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#A6761D;stroke:black;">
+						</svg>
+						<span>Anderer Standorte</span>
+					</div>
+				</td>
+				<td width="50%" class="folge_standorttyp">
+					<b>Folge-Standorttyp</b><br>
+					<div class="standorttyp_container selected" onclick="updateDestLocationType('ALL', this)">
+						<svg width="20" height="20">
+							<g>
+								<path d="M10 10 L10 1 17 4" style="fill:#000000;" />
+							</g>
+							<g transform="rotate(51, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#90C0E5;" />
+							</g>
+							<g transform="rotate(103, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#3F81BF;" />
+							</g>
+							<g transform="rotate(154, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#A02E37;" />
+							</g>
+							<g transform="rotate(206, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#E52826;" />
+							</g>
+							<g transform="rotate(257, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#FBBB3C;" />
+							</g>
+							<g transform="rotate(309, 10 10)">
+								<path d="M10 10 L10 0 17 4" style="fill:#A6761D;" />
+							</g>
+							<circle cx="10" cy="10" r="9" style="fill:none;stroke:black;">
+						</svg>
+						<span>Alle</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('HOME', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#000000;stroke:black;">
+						</svg>
+						<span>Wohnorte</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('JOB', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#90C0E5;stroke:black;">
+						</svg>
+						<span>Arbeits-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('EDUCATION', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#3F81BF;stroke:black;">
+						</svg>
+						<span>Bildungs-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('SHOPPING', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#A02E37;stroke:black;">
+						</svg>
+						<span>Einkaufs-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('SETTLEMENT', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#E52826;stroke:black;">
+						</svg>
+						<span>StO priv. Erledigung</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('LEISURE', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#FBBB3C;stroke:black;">
+						</svg>
+						<span>Freizeit-StO</span>
+					</div>
+					
+					<div class="standorttyp_container" onclick="updateDestLocationType('OTHER', this)">
+						<svg width="20" height="20">
+							<circle cx="10" cy="10" r="9" style="fill:#A6761D;stroke:black;">
+						</svg>
+						<span>Anderer Standorte</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+</body>
+</html>
