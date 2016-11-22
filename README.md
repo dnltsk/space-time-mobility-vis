@@ -25,6 +25,6 @@ This piece of software is the practical part of my Master's Thesis (2014)
 ## Roadmap
 
 - upgrade to D3v4
-- change VanillaJS code to Riot & React & Mocha
+- change VanillaJS code to RiotJS & ReactJS & Bootstrap & MochaJS
 - set up CI pipeline
 
