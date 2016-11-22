@@ -6,11 +6,11 @@ Module to visualize modeled mobility results / trajectory data. Visualization ge
 
 ## Screenshots
 
-![Single Individuals as Time-Space-Path](http://dante.bplaced.net/img/screenshot_fallbeispiel1.png)
+![Single Individuals as Time-Space-Path](http://dante.bplaced.net/img/screenshot_fallbeispiel1.png =400x)
 
-![Aggregated Individuals as Traffic-Streams](http://dante.bplaced.net/img/screenshot_fallbeispiel2.png)
+![Aggregated Individuals as Traffic-Streams](http://dante.bplaced.net/img/screenshot_fallbeispiel2.png =400x)
 
-![All Individuals as Animation](http://dante.bplaced.net/img/screenshot_fallbeispiel3.png)
+![All Individuals as Animation](http://dante.bplaced.net/img/screenshot_fallbeispiel3.png =400x)
 
 ## Build
 
