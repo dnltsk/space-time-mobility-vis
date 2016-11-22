@@ -20,10 +20,11 @@ Module to visualize modeled mobility results / trajectory data. Visualization ge
 
 ## Background
 
-This piece of software is the practical part of my Master's Thesis (2014)
+This piece of software is the practical part of my [Master's Thesis (2014)](MA_Daniel_Teske_2014.pdf)
 
 ## Roadmap
 
+- rethink pre-render approach: a true BFF would be a better fit
 - upgrade to D3v4
 - change VanillaJS code to RiotJS & ReactJS & Bootstrap & MochaJS
 - set up CI pipeline
