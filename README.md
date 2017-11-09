@@ -6,11 +6,11 @@ Module to visualize modeled mobility results / trajectory data. Visualization ge
 
 ## Screenshots
 
-<img alt="Single Individuals as Time-Space-Path" src="http://dante.bplaced.net/img/screenshot_fallbeispiel1.png" width="400">
+<img alt="Single Individuals as Time-Space-Path" src="https://github.com/dnltsk/space-time-mobility-vis/raw/master/img/screenshot_fallbeispiel1.png" width="400">
 
-<img alt="Aggregated Individuals as Traffic-Streams" src="http://dante.bplaced.net/img/screenshot_fallbeispiel2.png" width="400">
+<img alt="Aggregated Individuals as Traffic-Streams" src="https://github.com/dnltsk/space-time-mobility-vis/raw/master/img/screenshot_fallbeispiel2.png" width="400">
 
-<img alt="All Individuals as Animation" src="http://dante.bplaced.net/img/screenshot_fallbeispiel3.png" width="400">
+<img alt="All Individuals as Animation" src="https://github.com/dnltsk/space-time-mobility-vis/raw/master/img/screenshot_fallbeispiel3.png" width="400">
 
 ## Build
 
